@@ -1,0 +1,137 @@
+* {
+    box-sizing: border-box; /* 边框和内边距计算在宽度和高度内 */
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f8ff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* 页面至少占满整个视口高度 */
+}
+
+header, footer {
+    background-color: #BDD6F2;
+    padding: 20px;
+    text-align: center; /* 头部和底部内容居中 */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+nav ul, .sidebar ul {
+    list-style-type: none; /* 移除列表样式 */
+    padding: 0; /* 移除内边距 */
+}
+
+nav ul li, .sidebar ul li {
+    display: inline; /* 侧边栏和导航使用 inline 布局 */
+    margin: 0 15px; /* 设置导航项间距 */
+}
+
+.sidebar {
+    width: 200px; /* 侧边栏宽度 */
+    padding: 20px; /* 内边距 */
+    background-color: #e7f1ff; /* 侧边栏背景颜色 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+    margin-right: 20px; /* 侧边栏与内容间距 */
+}
+
+.container {
+    display: flex; /* flexbox 布局 */
+    margin: 20px; /* 容器外边距 */
+}
+
+/* 确保主页面正文内容居中 */
+main {
+    flex: 1; /* 占满剩余的空间 */
+    padding: 20px; /* 内边距 */
+    background-color: #fff; /* 背景颜色 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+    text-align: center; /* 主页面内容居中对齐 */
+}
+
+.about {
+    flex: 1; /* 占满剩余的空间 */
+    padding: 20px; /* 内边距 */
+    background-color: #fff; /* 背景颜色 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+    display: flex; /* 使用 flexbox 布局 */
+    flex-direction: column; /* 垂直排列 */
+    align-items: center; /* 水平居中 */
+    text-align: center; /* 文本居中 */
+}
+
+.blog {
+    flex: 1; /* 占满剩余的空间 */
+    padding: 20px; /* 内边距 */
+    background-color: #fff; /* 背景颜色 */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+    text-align: left; /* 博客内容左对齐 */
+}
+
+h2 {
+    color: #333;
+}
+
+article {
+    margin-bottom: 20px;
+    transition: transform 0.3s; /* 悬停时的过渡效果 */
+}
+
+article:hover {
+    transform: scale(1.02); /* 鼠标悬停时放大 */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 悬停时阴影效果 */
+}
+
+.sidebar h3, p {
+    margin: 0; /* 移除默认外边距 */
+}
+
+.sidebar ul li {
+    margin: 10px 0; /* 列表项间距 */
+}
+
+.sidebar ul li a, nav ul li a {
+    text-decoration: none; /* 移除链接下划线 */
+    color: #007BFF; /* 链接颜色 */
+    transition: color 0.3s; /* 鼠标悬停时颜色过渡 */
+}
+
+nav ul li a:hover {
+    color: #007BFF; /* 鼠标悬停时颜色 */
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline; /* 鼠标悬停时添加下划线 */
+}
+
+footer {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+/* 确保在小屏幕上文本不会溢出 */
+p {
+    margin: 15px 0; /* 段落间距 */
+    line-height: 1.5; /* 行间距 */
+}
+
+/* 媒体查询：适应小屏幕设备 */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column; /* 切换为垂直布局 */
+        align-items: center; /* 居中对齐 */
+    }
+
+    .sidebar {
+        width: 100%; /* 侧边栏宽度改为100% */
+        margin: 0 0 20px 0; /* 移除右边距并添加底边距 */
+    }
+
+    nav ul li {
+        display: block; /* 导航项垂直排列 */
+        margin: 10px 0; /* 设置导航项之间的间距 */
+    }
+}
