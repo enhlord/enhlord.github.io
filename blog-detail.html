@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>博客详情</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>博客详情</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">返回主页面</a></li>
+                <li><a href="blog.html">返回博客</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="container">
+        <main class="blog-detail">
+            <h2 id="article-title">文章标题</h2>
+            <p id="publish-date">发布时间: 2023年10月1日</p>
+            <p id="article-content">文章内容会在这里展示...</p>
+            <div class="navigation">
+                <a id="prev-article" href="blog-detail.html?article=0">上一篇: 文章标题</a>
+                <a id="next-article" href="blog-detail.html?article=2">下一篇: 文章标题</a>
+            </div>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 个人网站. 保留所有权利.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const params = new URLSearchParams(window.location.search);
+            const articleId = params.get('article');
+
+            const articles = [
+                {
+                    title: "技术文章标题 1",
+                    date: "2023年10月1日",
+                    content: "这是我的第一篇技术博客文章。内容涉及到我最近的项目和一些技术分享。"
+                },
+                {
+                    title: "生活随笔标题 2",
+                    date: "2023年10月5日",
+                    content: "这是我的第一篇生活随笔。内容涉及到我在日常生活中的一些体会。"
+                },
+                {
+                    title: "学习笔记标题 3",
+                    date: "2023年10月10日",
+                    content: "这是我的第一篇学习笔记。内容涉及到我在学习中的一些收获与思考。"
+                },
+                {
+                    title: "其他主题标题 4",
+                    date: "2023年10月15日",
+                    content: "这是我的第一篇其他主题的文章。内容涉及到一些我感兴趣的事情。"
+                }
+            ];
+
+            if (articleId >= 0 && articleId < articles.length) {
+                const article = articles[articleId];
+                document.getElementById('article-title').innerText = article.title;
+                document.getElementById('publish-date').innerText = `发布时间: ${article.date}`;
+                document.getElementById('article-content').innerText = article.content;
+
+                // 设置上一篇和下一篇链接
+                document.getElementById('prev-article').href = `blog-detail.html?article=${articleId - 1}`;
+                document.getElementById('next-article').href = `blog-detail.html?article=${articleId + 1}`;
+                document.getElementById('prev-article').style.display = articleId > 0 ? 'inline' : 'none';
+                document.getElementById('next-article').style.display = articleId < articles.length - 1 ? 'inline' : 'none';
+            }
+        });
+    </script>
+</body>
+</html>

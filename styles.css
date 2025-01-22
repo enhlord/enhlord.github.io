@@ -135,3 +135,12 @@ p {
         margin: 10px 0; /* 设置导航项之间的间距 */
     }
 }
+article a {
+    text-decoration: none; /* 移除链接下划线 */
+    color: inherit; /* 使用父元素的文本颜色 */
+}
+
+article a:hover {
+    color: #007BFF; /* 悬停时改变颜色 */
+    background-color: #f0f8ff; /* 悬停时背景颜色 */
+}
